@@ -15,5 +15,13 @@ public class App {
 
         quadrado.setLargura(10.0);
         System.out.println("Área do quadrado: " + quadrado.getArea());
+
+        System.out.println("---- Violação do Liskov Substitution Principle ----");
+
+        Retangulo retangulo2 = new Quadrado();
+        retangulo2.setAltura(5.0);
+        retangulo2.setLargura(10.0);
+
+        System.out.println("Área do retângulo 2: " + retangulo2.getArea()); // Incorreta!
     }
 }
