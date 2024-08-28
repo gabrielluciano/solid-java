@@ -7,6 +7,11 @@ public class Item {
     private final Double valor;
 
     public Item(String descricao, Double valor) {
+        if (descricao == null || descricao.isBlank())
+            throw new IllegalArgumentException("Descrição não pode ser vazia");
+        if (valor == null || valor < 0.0)
+            throw new IllegalArgumentException("Valor não pode ser nulo");
+
         this.descricao = descricao;
         this.valor = valor;
     }
